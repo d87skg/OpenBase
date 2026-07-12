@@ -12,30 +12,38 @@ OpenBase 不是 Framework，不是 Runtime，不是 SDK，而是：
 - 提供证据格式、重放验证、信任评分和证书颁发的**标准规范**
 - 支持跨运行时、跨框架、跨语言的**互操作性**
 
+## 架构
+spec/ ← 核心规范 (OBS, Evidence, Replay, Conformance)
+reference/ ← 参考实现 (validators)
+conformance/ ← 一致性工具 (openbase-certify)
+runtime/ ← 原生运行时 (OpenClaw)
+
+text
+
 ## 目录结构
 
 | 目录 | 描述 |
 | :--- | :--- |
-| openbase-spec/ | **核心规范** — 协议标准定义 |
-| openclaw/ | **参考实现** — 证明标准可运行 |
-| traccia/ | **SDK + CLI** — 开发者工具链 |
-| adapters/ | **适配器** — 与外部框架的桥接 |
+| spec/ | **核心规范** — 协议标准定义 |
+| reference/ | **参考实现** — 证明标准可运行 |
 | conformance/ | **一致性测试** — 验证实现是否符合标准 |
-| docs/ | **文档** — 用户指南和架构说明 |
-| scripts/ | **工具脚本** — 开发和测试辅助 |
-| examples/ | **示例** — 使用案例 |
+| runtime/ | **原生运行时** — OpenClaw |
+
+## SDKs
+
+- **Traccia** (Python): `pip install traccia-sdk`
+- More SDKs coming (Rust, TypeScript, Go)
 
 ## 核心规范
 
 | 规范 | 描述 | 状态 |
 | :--- | :--- | :--- |
+| OBS | 规范事件词汇表 | ✅ 冻结 |
 | Evidence | 证据数据结构、签名、哈希链 | ✅ 冻结 |
 | Replay | 执行重放、因果图、保真度 | ✅ 冻结 |
-| Registry | Runtime 注册、证据提交、信任查询 | ✅ 冻结 |
-| Certificate | 证书生命周期、等级、撤销 | ✅ 冻结 |
-| Trust | 信任模型、评分维度、时间衰减 | ✅ 冻结 |
+| Conformance | 一致性验证与认证 | ✅ 冻结 |
 
-> 详细规范见 openbase-spec/core/
+> 详细规范见 spec/
 
 ## 扩展规范
 
@@ -45,73 +53,31 @@ OpenBase 不是 Framework，不是 Runtime，不是 SDK，而是：
 | Semantic Layer | 语义归一化与嵌入 | 草案 |
 | DSL Invariant | 规则驱动裁决引擎 | 草案 |
 
-> 扩展规范见 openbase-spec/extensions/
-
 ## 快速开始
 
-### 1. 初始化项目
+### 1. 安装 Traccia SDK
 
 ```bash
-openbase init my-project
-cd my-project
-```
+pip install traccia-sdk
+2. 拦截 Agent 生成证据
+bash
+traccia intercept -- python your_agent.py
+3. 验证证据包
+bash
+python conformance/certify.py task.evidence
+Badge
+Add to any OpenBase-certified agent:
 
-### 2. 运行 Agent
+https://img.shields.io/badge/OpenBase-Certified-00AA00
 
-```bash
-openbase run agents/main.py
-```
+markdown
+[![OpenBase Certified](https://img.shields.io/badge/OpenBase-Certified-00AA00)](https://github.com/d87skg/OpenBase)
+版本
+规范版本：v1.0.0
 
-### 3. 查看信任评分
+状态：已冻结
 
-```bash
-openbase trust ranking
-```
+冻结日期：2026-07-05
 
-### 4. 颁发证书
-
-```bash
-openbase certificate issue --level BRONZE
-```
-
-## CLI 命令参考
-
-| 命令 | 描述 |
-| :--- | :--- |
-| `openbase init [name]` | 初始化 OpenBase 项目 |
-| `openbase run <agent_path>` | 运行 Agent 并记录证据 |
-| `openbase replay <evidence_id>` | 重放 Agent 执行过程 |
-| `openbase test <evidence_id>` | 验证证据完整性 |
-| `openbase certificate issue` | 颁发信任证书 |
-| `openbase trust ranking` | 查看信任评分排名 |
-| `openbase runtime register` | 注册 Runtime |
-
-### Init 选项
-
-```
-openbase init [name] [--force]
-  name      项目名称 (默认: my-openbase-project)
-  --force   覆盖已存在的目录
-```
-
-### Certificate 选项
-
-```
-openbase certificate issue [--runtime-id ID] [--level LEVEL] [--evidence-dir DIR] [--output-dir DIR]
-  --runtime-id     Runtime ID
-  --level          证书等级: BRONZE | SILVER | GOLD | PLATINUM (默认: BRONZE)
-  --evidence-dir   证据目录 (默认: ./evidence)
-  --output-dir     证书输出目录 (默认: ./reports)
-```
-
-## 版本
-
-- 规范版本：v1.0.0
-- 状态：已冻结
-- 冻结日期：2026-07-05
-
-## 许可
-
+许可
 Apache License 2.0
-
-本结构由 OpenBase Specification Committee 维护。

@@ -1,0 +1,85 @@
+{
+  "": "https://openbase.dev/schemas/evidence/v2.0/evidence.schema.json",
+  "title": "OpenBase Evidence v2.0",
+  "description": "Signed snapshot of an OBS event with hash chain and signature",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "spec_version",
+    "event_id",
+    "execution_id",
+    "agent_id",
+    "event_type",
+    "timestamp",
+    "causal",
+    "payload",
+    "hash",
+    "signature",
+    "public_key"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "spec_version": {
+      "type": "string",
+      "enum": [
+        "2.0"
+      ]
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "execution_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "causal": {
+      "type": "object",
+      "required": [
+        "parent_id",
+        "vector_clock"
+      ],
+      "properties": {
+        "parent_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vector_clock": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "payload": {
+      "type": "object"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^ed25519:[A-Za-z0-9+/=]+$"
+    },
+    "public_key": {
+      "type": "string",
+      "pattern": "^ed25519:[A-Za-z0-9+/=]+$"
+    }
+  },
+  "additionalProperties": false
+}

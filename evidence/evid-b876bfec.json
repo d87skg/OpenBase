@@ -1,0 +1,20 @@
+{
+  "evidence_id": "evid-b876bfec",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGGRAPH_NODE_START",
+  "timestamp": "2026-07-05T22:24:13.621894",
+  "payload": {
+    "node_name": "validate",
+    "inputs": {
+      "counter": 2,
+      "data": {
+        "task": "Build a graph"
+      }
+    }
+  },
+  "proof": {
+    "hash": "sha256:langgraph_adapter_hash",
+    "signature": "ed25519:langgraph_adapter_signature"
+  }
+}

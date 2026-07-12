@@ -1,0 +1,13 @@
+{
+  "certificate_id": "cert-31a347b9",
+  "runtime_id": "rt-e37e8993",
+  "level": "BRONZE",
+  "status": "ACTIVE",
+  "issued_at": "2026-07-06T22:31:17.537112",
+  "expires_at": "2026-10-04T22:31:17.537112",
+  "evidence_count": 51,
+  "verification": {
+    "status": "PASS",
+    "reason": "\u9a8c\u8bc1\u901a\u8fc7"
+  }
+}

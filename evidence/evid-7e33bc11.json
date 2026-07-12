@@ -1,0 +1,15 @@
+{
+  "evidence_id": "evid-7e33bc11",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGCHAIN_TOOL_START",
+  "timestamp": "2026-07-05T22:22:30.547969",
+  "payload": {
+    "tool_name": "search_tool",
+    "input": "search query"
+  },
+  "proof": {
+    "hash": "sha256:langchain_adapter_hash",
+    "signature": "ed25519:langchain_adapter_signature"
+  }
+}

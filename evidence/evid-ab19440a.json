@@ -1,0 +1,22 @@
+{
+  "evidence_id": "evid-ab19440a",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "CREWAI_CREW_START",
+  "timestamp": "2026-07-05T22:29:11.645024",
+  "payload": {
+    "crew_name": "ContentCrew",
+    "agents": [
+      "Researcher",
+      "Writer"
+    ],
+    "tasks": [
+      "research_task",
+      "write_task"
+    ]
+  },
+  "proof": {
+    "hash": "sha256:crewai_adapter_hash",
+    "signature": "ed25519:crewai_adapter_signature"
+  }
+}

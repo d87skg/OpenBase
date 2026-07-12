@@ -1,0 +1,22 @@
+{
+  "evidence_id": "evid-a904b6e4",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGCHAIN_LLM_END",
+  "timestamp": "2026-07-05T22:22:30.547969",
+  "payload": {
+    "response": {
+      "generations": [
+        [
+          {
+            "text": "LLM response from SimpleChain: What is OpenBase?"
+          }
+        ]
+      ]
+    }
+  },
+  "proof": {
+    "hash": "sha256:langchain_adapter_hash",
+    "signature": "ed25519:langchain_adapter_signature"
+  }
+}

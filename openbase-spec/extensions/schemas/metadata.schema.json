@@ -1,0 +1,42 @@
+{
+  "": "obp://metadata/v1.0",
+  "title": "OpenBase Metadata Schema v1.0",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "agent_version": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "staging",
+        "production"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

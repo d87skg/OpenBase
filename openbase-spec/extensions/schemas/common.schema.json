@@ -1,0 +1,44 @@
+{
+  "": "obp://common/v1.0",
+  "title": "OpenBase Common Types v1.0",
+  "type": "object",
+  "definitions": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID v4 identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp"
+    },
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "positive_integer": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "non_negative_integer": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "version_string": {
+      "type": "string",
+      "pattern": "^[0-9]+\\\\.[0-9]+\\\\.[0-9]+$",
+      "description": "Semantic version"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "Valid URI"
+    },
+    "spec_id": {
+      "type": "string",
+      "pattern": "^OBP-[A-Z]+-[0-9]+\\\\.[0-9]+$",
+      "description": "Protocol identifier"
+    }
+  }
+}

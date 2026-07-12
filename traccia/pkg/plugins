@@ -1,0 +1,32 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from openbase_core.policy import PolicyEngine
+from typing import Dict, Any
+
+class Guard:
+    def __init__(self, event_bus, config_path: str = "guard_config.json"):
+        self.event_bus = event_bus
+        self.policy = PolicyEngine(config_path)
+        # 只订阅，不写入
+        self.event_bus.subscribe(self.on_tool_call)
+
+    def on_tool_call(self, ev: Dict[str, Any]):
+        if ev.get("event_type") != "ToolCall":
+            return
+        
+        tool_name = ev.get("payload", {}).get("tool_name", "")
+        action, reason = self.policy.evaluate(tool_name)
+        
+        # 【修正】Guard 只打印和返回决策，绝不生成 Evidence
+        if action == "deny":
+            print(f"[GUARD] 🛑 BLOCKED: {tool_name} - {reason}")
+            # 标记上下文，由 Runtime 决定是否记录为违规
+            # 这里我们可以抛出一个可捕获的异常，或者返回标志
+            # 为了简单且不破坏现有流程，我们只做日志，并由上层 Agent 记录 ToolResult 时附带 "blocked" 状态
+        else:
+            print(f"[GUARD] ✅ ALLOWED: {tool_name} - {reason}")
+
+def install_guard(event_bus, config_path: str = "guard_config.json"):
+    return Guard(event_bus, config_path)

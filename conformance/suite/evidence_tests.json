@@ -1,0 +1,42 @@
+﻿{
+  "name": "Evidence Tests",
+  "category": "EVIDENCE",
+  "spec_reference": "OBEP-0001",
+  "tests": [
+    {
+      "id": "EVIDENCE-001",
+      "name": "Minimal Evidence Validation",
+      "priority": "P0",
+      "description": "验证 Runtime 能否生成符合 Evidence Schema 的最小证据",
+      "expected": {"status": "PASS"}
+    },
+    {
+      "id": "EVIDENCE-002",
+      "name": "Evidence ID Uniqueness",
+      "priority": "P0",
+      "description": "验证 evidence_id 是否唯一",
+      "expected": {"unique": true}
+    },
+    {
+      "id": "EVIDENCE-003",
+      "name": "Spec Version Check",
+      "priority": "P0",
+      "description": "验证 spec_version 是否为 1.0",
+      "expected": {"spec_version": "1.0"}
+    },
+    {
+      "id": "EVIDENCE-004",
+      "name": "Hash Chain Continuity",
+      "priority": "P0",
+      "description": "验证哈希链是否连续",
+      "expected": {"chain_continuous": true}
+    },
+    {
+      "id": "EVIDENCE-005",
+      "name": "Signature Verification",
+      "priority": "P0",
+      "description": "验证签名是否正确",
+      "expected": {"signature_valid": true}
+    }
+  ]
+}

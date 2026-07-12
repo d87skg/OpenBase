@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://openbase.dev/schemas/event/v1.0/event.schema.json",
+  "title": "OpenBase Event (OBS v1.0)",
+  "description": "Canonical event format for AI Agent execution",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "actor",
+    "runtime",
+    "timestamp",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Globally unique event identifier",
+      "examples": ["evt_a1b2c3d4"]
+    },
+    "event_type": {
+      "type": "string",
+      "description": "Event type from OBS Event Registry",
+      "enum": [
+        "AGENT_CREATED",
+        "AGENT_STARTED",
+        "AGENT_PAUSED",
+        "AGENT_RESUMED",
+        "AGENT_FINISHED",
+        "AGENT_FAILED",
+        "LLM_REQUEST",
+        "LLM_RESPONSE",
+        "LLM_STREAM_START",
+        "LLM_STREAM_END",
+        "TOOL_CALL",
+        "TOOL_RESULT",
+        "TOOL_ERROR",
+        "MEMORY_READ",
+        "MEMORY_WRITE",
+        "MEMORY_DELETE",
+        "COMMAND_EXECUTE",
+        "FILE_READ",
+        "FILE_WRITE",
+        "CODE_EXECUTE",
+        "APPROVAL_REQUEST",
+        "APPROVAL_GRANTED",
+        "APPROVAL_DENIED"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "OBS spec version",
+      "default": "1.0",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "actor": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Actor identifier"
+        },
+        "type": {
+          "type": "string",
+          "description": "Actor type",
+          "enum": ["agent", "tool", "human", "system"]
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Runtime name (e.g., openhands, claude-code)"
+        },
+        "version": {
+          "type": "string",
+          "description": "Runtime version"
+        }
+      }
+    },
+    "parent_id": {
+      "type": "string",
+      "description": "Causal parent event ID for event chaining"
+    },
+    "vector_clock": {
+      "type": "object",
+      "description": "Vector clock for partial ordering",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp"
+    },
+    "state": {
+      "type": "object",
+      "description": "State transition (before/after)",
+      "properties": {
+        "before": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "description": "Event-type-specific payload data"
+    }
+  },
+  "additionalProperties": false
+}

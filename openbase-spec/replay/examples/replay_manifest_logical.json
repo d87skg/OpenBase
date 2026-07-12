@@ -1,0 +1,24 @@
+{
+  "replay_id": "rpl_002",
+  "execution_id": "exec_demo_001",
+  "fidelity": "LOGICAL",
+  "evidence_count": 3,
+  "chain_root": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+  "status": "completed",
+  "events": [
+    "evid_a1b2c3d4e5f6",
+    "evid_f7e8d9c0b1a2",
+    "evid_x1y2z3w4v5u6"
+  ],
+  "created": "2026-07-07T12:06:00Z",
+  "completed_at": "2026-07-07T12:06:02Z",
+  "summary": {
+    "hash_chain_valid": true,
+    "signatures_valid": true,
+    "causal_order_valid": true,
+    "final_state": {
+      "agent_status": "finished",
+      "tool_results": 1
+    }
+  }
+}

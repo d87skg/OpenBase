@@ -1,0 +1,8 @@
+{
+  "id": "runtime.openclaw.0.1.0",
+  "type": "runtime",
+  "display_name": "OpenClaw Reference Runtime",
+  "public_key": "ed25519:dGVzdF9ydW50aW1lX3B1YmxpY19rZXlfZGF0YV9oZXJlX3Rlc3Q=",
+  "status": "active",
+  "created": "2026-07-01T00:00:00Z"
+}

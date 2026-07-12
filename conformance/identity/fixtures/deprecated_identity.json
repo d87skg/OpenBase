@@ -1,0 +1,9 @@
+{
+  "id": "agent.legacy.bot",
+  "type": "agent",
+  "display_name": "Legacy Bot",
+  "public_key": "ed25519:dGVzdF9sZWdhY3lfcHVibGljX2tleV9kYXRhX2hlcmVfdGVzdA==",
+  "status": "deprecated",
+  "created": "2025-01-01T00:00:00Z",
+  "deprecated_at": "2026-06-01T00:00:00Z"
+}

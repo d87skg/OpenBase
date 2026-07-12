@@ -1,0 +1,18 @@
+{
+  "rt-e37e8993": {
+    "runtime_id": "rt-e37e8993",
+    "name": "OpenClaw",
+    "version": "1.0.0",
+    "vendor": "OpenBase",
+    "capabilities": [
+      "execution",
+      "evidence",
+      "replay"
+    ],
+    "registered_at": "2026-07-05T22:17:31.927032",
+    "status": "ACTIVE"
+  },
+  "by_name": {
+    "OpenClaw": "rt-e37e8993"
+  }
+}

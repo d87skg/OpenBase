@@ -1,0 +1,68 @@
+{
+  "": "https://openbase.dev/schemas/transport/v1.0/sdk-config.schema.json",
+  "title": "OpenBase SDK Configuration v1.0",
+  "description": "Configuration for Traccia SDK or other OpenBase SDK",
+  "type": "object",
+  "required": [
+    "sdk_name",
+    "sdk_version",
+    "openbase_endpoint"
+  ],
+  "properties": {
+    "sdk_name": {
+      "type": "string",
+      "enum": [
+        "traccia",
+        "openbase-python",
+        "openbase-js",
+        "openbase-go"
+      ]
+    },
+    "sdk_version": {
+      "type": "string"
+    },
+    "openbase_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "api_key": {
+          "type": "string"
+        },
+        "key_path": {
+          "type": "string"
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "auto_observe": {
+          "type": "boolean"
+        },
+        "auto_evidence": {
+          "type": "boolean"
+        },
+        "auto_replay": {
+          "type": "boolean"
+        },
+        "log_level": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ]
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

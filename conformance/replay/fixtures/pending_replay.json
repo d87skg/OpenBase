@@ -1,0 +1,10 @@
+{
+  "replay_id": "rpl_004",
+  "execution_id": "exec_pending_001",
+  "fidelity": "EXACT",
+  "evidence_count": 5,
+  "chain_root": "0000000000000000000000000000000000000000000000000000000000000000",
+  "status": "pending",
+  "events": [],
+  "created": "2026-07-07T12:08:00Z"
+}

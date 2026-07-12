@@ -1,0 +1,17 @@
+{
+  "subject_id": "agent.perfect.bot",
+  "subject_type": "agent",
+  "score": 1.0,
+  "confidence": 0.95,
+  "dimensions": {
+    "evidence_volume": 1.0,
+    "evidence_quality": 1.0,
+    "consistency": 1.0,
+    "recency": 1.0,
+    "peer_attestation": 1.0
+  },
+  "evidence_count": 1000,
+  "last_updated": "2026-07-07T12:00:00Z",
+  "previous_score": 0.99,
+  "trend": "rising"
+}

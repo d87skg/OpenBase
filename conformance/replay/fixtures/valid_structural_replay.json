@@ -1,0 +1,18 @@
+{
+  "replay_id": "rpl_001",
+  "execution_id": "exec_demo_001",
+  "fidelity": "STRUCTURAL",
+  "evidence_count": 3,
+  "chain_root": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+  "chain_tail": "f7e8d9c0b1a2f3e4d5c6b7a8f9e0d1c2b3a4f5e6d7c8f9e0a1b2c3d4e5f6a7b8",
+  "status": "completed",
+  "events": [
+    "evid_a1b2c3d4e5f6",
+    "evid_f7e8d9c0b1a2"
+  ],
+  "created": "2026-07-07T12:05:00Z",
+  "completed_at": "2026-07-07T12:05:01Z",
+  "summary": {
+    "hash_chain_valid": true
+  }
+}

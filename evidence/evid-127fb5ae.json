@@ -1,0 +1,17 @@
+{
+  "evidence_id": "evid-127fb5ae",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGCHAIN_CHAIN_START",
+  "timestamp": "2026-07-05T22:22:30.546958",
+  "payload": {
+    "chain_name": "SimpleChain",
+    "inputs": {
+      "input": "What is OpenBase?"
+    }
+  },
+  "proof": {
+    "hash": "sha256:langchain_adapter_hash",
+    "signature": "ed25519:langchain_adapter_signature"
+  }
+}

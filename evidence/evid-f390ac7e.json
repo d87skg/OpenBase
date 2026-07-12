@@ -1,0 +1,24 @@
+{
+  "evidence_id": "evid-f390ac7e",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "CREWAI_CREW_END",
+  "timestamp": "2026-07-05T22:29:11.664874",
+  "payload": {
+    "crew_name": "ContentCrew",
+    "results": {
+      "Researcher": [
+        "Task 'research_task' completed by Researcher",
+        "Task 'write_task' completed by Researcher"
+      ],
+      "Writer": [
+        "Task 'research_task' completed by Writer",
+        "Task 'write_task' completed by Writer"
+      ]
+    }
+  },
+  "proof": {
+    "hash": "sha256:crewai_adapter_hash",
+    "signature": "ed25519:crewai_adapter_signature"
+  }
+}

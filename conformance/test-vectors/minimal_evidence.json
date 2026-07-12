@@ -1,0 +1,20 @@
+﻿{
+  "name": "Minimal Evidence Test Vector",
+  "description": "用于验证 Evidence Schema 的最小证据示例",
+  "evidence": {
+    "evidence_id": "evid-test-001",
+    "spec_version": "1.0",
+    "runtime_id": "runtime-test",
+    "execution_id": "exec-test-001",
+    "actor": "agent-test",
+    "event_type": "AGENT_STARTED",
+    "timestamp": "2026-07-05T10:00:00.000Z",
+    "causal": {"parent_id": null, "vector_clock": {"node-a": 1}},
+    "action": {"input": {"prompt": "Hello"}, "output": null, "duration_ms": 0},
+    "proof": {
+      "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": "ed25519:test_signature"
+    }
+  },
+  "expected_validation": true
+}

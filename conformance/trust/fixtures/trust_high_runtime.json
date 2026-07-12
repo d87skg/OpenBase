@@ -1,0 +1,17 @@
+{
+  "subject_id": "runtime.openclaw.0.1.0",
+  "subject_type": "runtime",
+  "score": 0.85,
+  "confidence": 0.9,
+  "dimensions": {
+    "evidence_volume": 0.9,
+    "evidence_quality": 0.95,
+    "consistency": 0.88,
+    "recency": 0.8,
+    "peer_attestation": 0.75
+  },
+  "evidence_count": 150,
+  "last_updated": "2026-07-07T12:00:00Z",
+  "previous_score": 0.83,
+  "trend": "rising"
+}

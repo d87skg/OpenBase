@@ -1,0 +1,16 @@
+{
+  "certificate_id": "cert_model_005",
+  "subject_id": "model.anthropic.claude-sonnet-4",
+  "subject_type": "model",
+  "level": "GOLD",
+  "issuer": "registry.openbase.main",
+  "issued_at": "2026-07-07T12:00:00Z",
+  "expires_at": "2026-10-07T12:00:00Z",
+  "trust_snapshot": {
+    "score": 0.78,
+    "evidence_count": 200
+  },
+  "signature": "ed25519:dGVzdF9jZXJ0X3NpZ25hdHVyZV9kYXRhX2Zvcl9kZW1vbnN0cmF0aW9u",
+  "status": "active",
+  "renewal_count": 1
+}

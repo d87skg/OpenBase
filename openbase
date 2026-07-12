@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""
+OpenBase CLI - 统一入口
+"""
+
+import sys
+import os
+import argparse
+from pathlib import Path
+
+# 添加项目路径
+project_root = Path(__file__).parent.absolute()
+sys.path.insert(0, str(project_root))
+sys.path.insert(0, str(project_root / "openclaw"))
+sys.path.insert(0, str(project_root / "traccia" / "cmd"))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="openbase",
+        description="OpenBase - Agent Trust Infrastructure CLI",
+        epilog="Run 'openbase <command> --help' for more information."
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # init 命令
+    init_parser = subparsers.add_parser("init", help="初始化 OpenBase 项目")
+    init_parser.add_argument("name", nargs="?", default="my-openbase-project", help="项目名称")
+    init_parser.add_argument("--force", action="store_true", help="覆盖已存在的目录")
+
+    # run 命令
+    run_parser = subparsers.add_parser("run", help="运行 Agent")
+    run_parser.add_argument("file", help="Agent 文件路径")
+
+    # replay 命令
+    replay_parser = subparsers.add_parser("replay", help="重放执行过程")
+    replay_parser.add_argument("--evidence-dir", default="./evidence", help="证据目录")
+
+    # test 命令
+    test_parser = subparsers.add_parser("test", help="运行一致性测试")
+    test_parser.add_argument("--evidence-dir", default="./evidence", help="证据目录")
+    test_parser.add_argument("-v", "--verbose", action="store_true", help="详细输出")
+
+    # certificate 命令
+    cert_parser = subparsers.add_parser("certificate", help="证书管理")
+    cert_subparsers = cert_parser.add_subparsers(dest="action", required=True)
+    issue_parser = cert_subparsers.add_parser("issue", help="颁发证书")
+    issue_parser.add_argument("--runtime-id", help="Runtime ID")
+    issue_parser.add_argument("--level", default="BRONZE",
+                              choices=["BRONZE", "SILVER", "GOLD", "PLATINUM"],
+                              help="证书等级")
+    issue_parser.add_argument("--evidence-dir", default="./evidence", help="证据目录")
+    issue_parser.add_argument("--output-dir", default="./reports", help="证书输出目录")
+
+    # trust 命令
+    trust_parser = subparsers.add_parser("trust", help="信任管理")
+    trust_subparsers = trust_parser.add_subparsers(dest="action", required=True)
+    calc_parser = trust_subparsers.add_parser("calculate", help="计算信任分数")
+    calc_parser.add_argument("--runtime-id", help="Runtime ID")
+    calc_parser.add_argument("--provider", default="simple",
+                             choices=["simple", "weighted"], help="信任提供者")
+    calc_parser.add_argument("--threshold", type=float, default=0.6, help="验证阈值")
+
+    # registry 命令
+    reg_parser = subparsers.add_parser("registry", help="Registry 管理")
+    reg_subparsers = reg_parser.add_subparsers(dest="action", required=True)
+    reg_list_parser = reg_subparsers.add_parser("list", help="列出所有 Runtime")
+    reg_list_parser.add_argument("--runtime-id", help="Runtime ID")
+    reg_list_parser.add_argument("--name", help="Runtime 名称")
+
+    args = parser.parse_args()
+
+    # 动态导入并执行对应的命令模块
+    if args.command == "init":
+        from init import main as init_main
+        # 重新构造参数
+        sys.argv = ["init", args.name] if args.name else ["init"]
+        if args.force:
+            sys.argv.append("--force")
+        init_main()
+    elif args.command == "run":
+        from run import main as run_main
+        sys.argv = ["run", args.file]
+        run_main()
+    elif args.command == "replay":
+        from replay import main as replay_main
+        sys.argv = ["replay", "--evidence-dir", args.evidence_dir]
+        replay_main()
+    elif args.command == "test":
+        from test import main as test_main
+        sys.argv = ["test", "--evidence-dir", args.evidence_dir]
+        if args.verbose:
+            sys.argv.append("-v")
+        test_main()
+    elif args.command == "certificate":
+        from certificate import main as cert_main
+        sys.argv = ["certificate", args.action]
+        if args.action == "issue":
+            if args.runtime_id:
+                sys.argv.extend(["--runtime-id", args.runtime_id])
+            sys.argv.extend(["--level", args.level])
+            sys.argv.extend(["--evidence-dir", args.evidence_dir])
+            sys.argv.extend(["--output-dir", args.output_dir])
+        cert_main()
+    elif args.command == "trust":
+        from trust import main as trust_main
+        sys.argv = ["trust", args.action]
+        if args.action == "calculate":
+            if args.runtime_id:
+                sys.argv.extend(["--runtime-id", args.runtime_id])
+            sys.argv.extend(["--provider", args.provider])
+            sys.argv.extend(["--threshold", str(args.threshold)])
+        trust_main()
+    elif args.command == "registry":
+        from registry import main as registry_main
+        sys.argv = ["registry", args.action]
+        if args.action == "list":
+            if args.runtime_id:
+                sys.argv.extend(["--runtime-id", args.runtime_id])
+            if args.name:
+                sys.argv.extend(["--name", args.name])
+        registry_main()
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    main()

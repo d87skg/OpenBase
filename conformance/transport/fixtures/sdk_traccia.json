@@ -1,0 +1,15 @@
+{
+  "sdk_name": "traccia",
+  "sdk_version": "0.2.0",
+  "openbase_endpoint": "https://registry.openbase.dev",
+  "auth": {
+    "api_key": "ob_sk_traccia_demo"
+  },
+  "features": {
+    "auto_observe": true,
+    "auto_evidence": true,
+    "auto_replay": false,
+    "log_level": "info"
+  },
+  "created": "2026-07-07T12:00:00Z"
+}

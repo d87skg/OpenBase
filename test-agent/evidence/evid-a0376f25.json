@@ -1,0 +1,18 @@
+{
+  "evidence_id": "evid-a0376f25",
+  "spec_version": "1.0",
+  "agent_id": "main",
+  "run_id": "7e8a8669-ab1c-47a7-b6d1-7753f6b2e88d",
+  "event_type": "AGENT_FINISHED",
+  "timestamp": "2026-07-06T22:51:40.997810",
+  "payload": {
+    "output": {
+      "status": "ok",
+      "runtime": "OpenClaw"
+    }
+  },
+  "proof": {
+    "hash": "sha256:3711f9a156892c6be8f144349360f03e4a96f76e598a43972365c0cb4c25c8e4",
+    "signature": "ed25519:reference_runtime_signature"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "": "https://openbase.dev/schemas/certificate/v1.0/certificate.schema.json",
+  "title": "OpenBase Certificate v1.0",
+  "description": "Formal trust credential issued to a Runtime or Agent",
+  "type": "object",
+  "required": [
+    "certificate_id",
+    "subject_id",
+    "subject_type",
+    "level",
+    "issuer",
+    "issued_at",
+    "expires_at",
+    "trust_snapshot",
+    "signature",
+    "status"
+  ],
+  "properties": {
+    "certificate_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "runtime",
+        "agent",
+        "model",
+        "tool"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "BRONZE",
+        "SILVER",
+        "GOLD",
+        "PLATINUM"
+      ]
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revoked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revocation_reason": {
+      "type": "string"
+    },
+    "trust_snapshot": {
+      "type": "object",
+      "required": [
+        "score",
+        "evidence_count"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "evidence_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dimensions": {
+          "type": "object"
+        }
+      }
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^ed25519:[A-Za-z0-9+/=]+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expiring",
+        "expired",
+        "revoked"
+      ]
+    },
+    "renewal_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

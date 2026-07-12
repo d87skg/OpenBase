@@ -1,0 +1,35 @@
+﻿{
+  "name": "Registry Tests",
+  "category": "REGISTRY",
+  "spec_reference": "OBEP-0005",
+  "tests": [
+    {
+      "id": "REGISTRY-001",
+      "name": "Runtime Registration",
+      "priority": "P0",
+      "description": "验证 Runtime 注册是否成功",
+      "expected": {"registered": true}
+    },
+    {
+      "id": "REGISTRY-002",
+      "name": "Duplicate Runtime Registration",
+      "priority": "P0",
+      "description": "验证重复注册是否被拒绝",
+      "expected": {"rejected": true}
+    },
+    {
+      "id": "REGISTRY-003",
+      "name": "Evidence Submission",
+      "priority": "P0",
+      "description": "验证证据提交是否成功",
+      "expected": {"submitted": true}
+    },
+    {
+      "id": "REGISTRY-004",
+      "name": "Trust Query",
+      "priority": "P0",
+      "description": "验证信任分数查询是否返回正确数据",
+      "expected": {"queried": true}
+    }
+  ]
+}

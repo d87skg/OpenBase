@@ -1,0 +1,16 @@
+{
+  "certificate_id": "cert_platinum_004",
+  "subject_id": "agent.perfect.bot",
+  "subject_type": "agent",
+  "level": "PLATINUM",
+  "issuer": "registry.openbase.main",
+  "issued_at": "2025-10-07T12:00:00Z",
+  "expires_at": "2026-07-14T12:00:00Z",
+  "trust_snapshot": {
+    "score": 0.92,
+    "evidence_count": 520
+  },
+  "signature": "ed25519:dGVzdF9jZXJ0X3NpZ25hdHVyZV9kYXRhX2Zvcl9kZW1vbnN0cmF0aW9u",
+  "status": "expiring",
+  "renewal_count": 3
+}

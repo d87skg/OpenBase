@@ -1,0 +1,25 @@
+{
+  "evidence_id": "evid-24f33147",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "ANTHROPIC_RESPONSE",
+  "timestamp": "2026-07-05T22:20:23.044816",
+  "payload": {
+    "response": {
+      "id": "msg_d42a266d",
+      "model": "claude-3-haiku-20240307",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Hello from Anthropic! This is a simulated response for claude-3-haiku-20240307"
+        }
+      ]
+    }
+  },
+  "proof": {
+    "hash": "sha256:anthropic_adapter_hash",
+    "signature": "ed25519:anthropic_adapter_signature"
+  }
+}

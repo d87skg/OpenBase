@@ -1,0 +1,25 @@
+{
+  "event_id": "evt_e5f6g7h8",
+  "version": "1.0",
+  "event_type": "TOOL_CALL",
+  "actor": {
+    "id": "agent.openclaw.demo",
+    "type": "agent"
+  },
+  "runtime": {
+    "name": "openclaw",
+    "version": "0.1.0"
+  },
+  "parent_id": "evt_a1b2c3d4",
+  "timestamp": "2026-07-07T12:00:05Z",
+  "state": {
+    "before": "running",
+    "after": "tool_executing"
+  },
+  "payload": {
+    "tool_name": "read_file",
+    "tool_input": {
+      "path": "/workspace/README.md"
+    }
+  }
+}

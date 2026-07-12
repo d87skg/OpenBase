@@ -1,0 +1,116 @@
+{
+  "evidence": {
+    "evid-2c0d7e4b": {
+      "evidence_id": "evid-2c0d7e4b",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-05T22:42:32.358470",
+      "indexed_at": "2026-07-05T22:42:32.361473"
+    },
+    "evid-c93f537d": {
+      "evidence_id": "evid-c93f537d",
+      "runtime_id": "rt-906110a4",
+      "event_type": "LLM_CALL",
+      "timestamp": "2026-07-05T22:42:32.359471",
+      "indexed_at": "2026-07-05T22:42:32.362756"
+    },
+    "evid-c463a470": {
+      "evidence_id": "evid-c463a470",
+      "runtime_id": "rt-906110a4",
+      "event_type": "TOOL_CALL",
+      "timestamp": "2026-07-05T22:42:32.360473",
+      "indexed_at": "2026-07-05T22:42:32.362756"
+    },
+    "evid-c99eda4c": {
+      "evidence_id": "evid-c99eda4c",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_FINISHED",
+      "timestamp": "2026-07-05T22:42:32.360473",
+      "indexed_at": "2026-07-05T22:42:32.363755"
+    },
+    "evid-808c63ad": {
+      "evidence_id": "evid-808c63ad",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-05T22:47:26.928735",
+      "indexed_at": "2026-07-05T22:47:26.936251"
+    },
+    "evid-700f8d11": {
+      "evidence_id": "evid-700f8d11",
+      "runtime_id": "rt-906110a4",
+      "event_type": "LLM_CALL",
+      "timestamp": "2026-07-05T22:47:26.929761",
+      "indexed_at": "2026-07-05T22:47:26.937005"
+    },
+    "evid-9c7de9fa": {
+      "evidence_id": "evid-9c7de9fa",
+      "runtime_id": "rt-906110a4",
+      "event_type": "TOOL_CALL",
+      "timestamp": "2026-07-05T22:47:26.932872",
+      "indexed_at": "2026-07-05T22:47:26.938077"
+    },
+    "evid-48d19067": {
+      "evidence_id": "evid-48d19067",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_FINISHED",
+      "timestamp": "2026-07-05T22:47:26.934774",
+      "indexed_at": "2026-07-05T22:47:26.938501"
+    },
+    "evid-789a67be": {
+      "evidence_id": "evid-789a67be",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-05T22:57:24.653052",
+      "indexed_at": "2026-07-05T22:57:24.663886"
+    },
+    "evid-a8208b56": {
+      "evidence_id": "evid-a8208b56",
+      "runtime_id": "rt-906110a4",
+      "event_type": "LLM_CALL",
+      "timestamp": "2026-07-05T22:57:24.653052",
+      "indexed_at": "2026-07-05T22:57:24.664903"
+    },
+    "evid-5b23ef84": {
+      "evidence_id": "evid-5b23ef84",
+      "runtime_id": "rt-906110a4",
+      "event_type": "TOOL_CALL",
+      "timestamp": "2026-07-05T22:57:24.653052",
+      "indexed_at": "2026-07-05T22:57:24.665903"
+    },
+    "evid-70619b60": {
+      "evidence_id": "evid-70619b60",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_FINISHED",
+      "timestamp": "2026-07-05T22:57:24.653052",
+      "indexed_at": "2026-07-05T22:57:24.665903"
+    },
+    "evid-26417f04": {
+      "evidence_id": "evid-26417f04",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-05T22:57:37.834815",
+      "indexed_at": "2026-07-05T22:57:37.840172"
+    },
+    "evid-d59f7716": {
+      "evidence_id": "evid-d59f7716",
+      "runtime_id": "rt-906110a4",
+      "event_type": "LLM_CALL",
+      "timestamp": "2026-07-05T22:57:37.834815",
+      "indexed_at": "2026-07-05T22:57:37.840172"
+    },
+    "evid-cc7fa0c4": {
+      "evidence_id": "evid-cc7fa0c4",
+      "runtime_id": "rt-906110a4",
+      "event_type": "TOOL_CALL",
+      "timestamp": "2026-07-05T22:57:37.834815",
+      "indexed_at": "2026-07-05T22:57:37.840172"
+    },
+    "evid-635313b0": {
+      "evidence_id": "evid-635313b0",
+      "runtime_id": "rt-906110a4",
+      "event_type": "AGENT_FINISHED",
+      "timestamp": "2026-07-05T22:57:37.834815",
+      "indexed_at": "2026-07-05T22:57:37.842647"
+    }
+  }
+}

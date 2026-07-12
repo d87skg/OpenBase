@@ -1,0 +1,42 @@
+{
+  "": "obp://crypto/v1.0",
+  "title": "OpenBase Crypto Schema v1.0",
+  "type": "object",
+  "required": [
+    "hash",
+    "hash_algorithm",
+    "signature",
+    "signature_algorithm",
+    "public_key"
+  ],
+  "properties": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$",
+      "description": "SHA-256 hash (or algorithm-defined length)"
+    },
+    "hash_algorithm": {
+      "type": "string",
+      "enum": [
+        "SHA-256"
+      ],
+      "description": "Hash algorithm"
+    },
+    "signature": {
+      "type": "string",
+      "description": "Ed25519 signature (base64)"
+    },
+    "signature_algorithm": {
+      "type": "string",
+      "enum": [
+        "Ed25519"
+      ],
+      "description": "Signature algorithm"
+    },
+    "public_key": {
+      "type": "string",
+      "description": "Ed25519 public key (base64)"
+    }
+  },
+  "additionalProperties": false
+}

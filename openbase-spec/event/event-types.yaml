@@ -1,0 +1,79 @@
+﻿# OpenBase Event Types Registry
+# Version: 1.0
+# Status: Draft
+# This file defines all canonical event types in OBS.
+
+version: "1.0"
+last_updated: "2026-07-07"
+
+events:
+
+  agent:
+    description: "Agent lifecycle events"
+    types:
+      - AGENT_CREATED
+      - AGENT_STARTED
+      - AGENT_PAUSED
+      - AGENT_RESUMED
+      - AGENT_FINISHED
+      - AGENT_FAILED
+
+  llm:
+    description: "LLM interaction events"
+    types:
+      - LLM_REQUEST
+      - LLM_RESPONSE
+      - LLM_STREAM_START
+      - LLM_STREAM_END
+
+  tool:
+    description: "Tool execution events"
+    types:
+      - TOOL_CALL
+      - TOOL_RESULT
+      - TOOL_ERROR
+
+  memory:
+    description: "Memory operation events"
+    types:
+      - MEMORY_READ
+      - MEMORY_WRITE
+      - MEMORY_DELETE
+
+  execution:
+    description: "System execution events"
+    types:
+      - COMMAND_EXECUTE
+      - FILE_READ
+      - FILE_WRITE
+      - CODE_EXECUTE
+
+  human:
+    description: "Human interaction events"
+    types:
+      - APPROVAL_REQUEST
+      - APPROVAL_GRANTED
+      - APPROVAL_DENIED
+
+mapping:
+  # Runtime-to-OBS event mapping guidelines
+  openhands:
+    ToolStart: TOOL_CALL
+    ToolEnd: TOOL_RESULT
+    AgentStart: AGENT_STARTED
+    AgentFinish: AGENT_FINISHED
+  
+  claude_code:
+    ToolInvoke: TOOL_CALL
+    CommandExecute: COMMAND_EXECUTE
+    FileEdit: FILE_WRITE
+  
+  langgraph:
+    NodeEnter: AGENT_STARTED
+    NodeExit: AGENT_FINISHED
+    StateChange: AGENT_PAUSED
+  
+  crewai:
+    TaskStart: AGENT_STARTED
+    TaskComplete: AGENT_FINISHED
+    AgentAction: TOOL_CALL

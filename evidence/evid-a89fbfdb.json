@@ -1,0 +1,23 @@
+{
+  "evidence_id": "evid-a89fbfdb",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LLM_REQUEST",
+  "timestamp": "2026-07-05T22:18:38.181426",
+  "payload": {
+    "model": "gpt-3.5-turbo",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, OpenBase!"
+      }
+    ],
+    "params": {
+      "temperature": 0.7
+    }
+  },
+  "proof": {
+    "hash": "sha256:openai_adapter_hash",
+    "signature": "ed25519:openai_adapter_signature"
+  }
+}

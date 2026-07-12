@@ -1,0 +1,17 @@
+{
+  "replay_id": "rpl_003",
+  "execution_id": "exec_broken_001",
+  "fidelity": "STRUCTURAL",
+  "evidence_count": 1,
+  "chain_root": "deadbeef00000000000000000000000000000000000000000000000000000000",
+  "status": "failed",
+  "error_code": "E002",
+  "events": [
+    "evid_broken_1"
+  ],
+  "created": "2026-07-07T12:07:00Z",
+  "completed_at": "2026-07-07T12:07:01Z",
+  "summary": {
+    "hash_chain_valid": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "evidence_id": "evid-9c7de9fa",
+  "spec_version": "1.0",
+  "agent_id": "main",
+  "run_id": "2c41e9a5-6cc6-45f9-a5c2-2552c6aae135",
+  "event_type": "TOOL_CALL",
+  "timestamp": "2026-07-05T22:47:26.932872",
+  "payload": {
+    "tool": "echo",
+    "args": {
+      "prompt": "Hello, OpenBase!",
+      "file": "agents/main.py"
+    }
+  },
+  "proof": {
+    "hash": "sha256:000ba23c77c4ccbf2f18cc7622649659f3bc7a72d9794a61da19900e9912bee6",
+    "signature": "ed25519:reference_runtime_signature"
+  }
+}

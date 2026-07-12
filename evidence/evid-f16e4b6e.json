@@ -1,0 +1,17 @@
+{
+  "evidence_id": "evid-f16e4b6e",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGGRAPH_START",
+  "timestamp": "2026-07-05T22:24:13.621894",
+  "payload": {
+    "graph_name": "SimpleWorkflow",
+    "inputs": {
+      "task": "Build a graph"
+    }
+  },
+  "proof": {
+    "hash": "sha256:langgraph_adapter_hash",
+    "signature": "ed25519:langgraph_adapter_signature"
+  }
+}

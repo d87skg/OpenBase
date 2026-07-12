@@ -1,0 +1,18 @@
+{
+  "adapter_id": "adapter-claude-code-grpc",
+  "runtime_name": "claude-code",
+  "runtime_version": "2.5.0",
+  "target_protocol": "gRPC",
+  "endpoint": "grpc.registry.openbase.dev:443",
+  "auth": {
+    "type": "mtls"
+  },
+  "options": {
+    "auto_emit": true,
+    "batch_size": 50,
+    "retry_max": 5,
+    "timeout_ms": 3000
+  },
+  "status": "connected",
+  "created": "2026-07-06T00:00:00Z"
+}

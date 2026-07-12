@@ -1,0 +1,23 @@
+{
+  "certificate_id": "cert_gold_001",
+  "subject_id": "runtime.openclaw.0.1.0",
+  "subject_type": "runtime",
+  "level": "GOLD",
+  "issuer": "registry.openbase.main",
+  "issued_at": "2026-07-07T12:00:00Z",
+  "expires_at": "2026-10-07T12:00:00Z",
+  "trust_snapshot": {
+    "score": 0.85,
+    "evidence_count": 150,
+    "dimensions": {
+      "evidence_volume": 0.9,
+      "evidence_quality": 0.95,
+      "consistency": 0.88,
+      "recency": 0.8,
+      "peer_attestation": 0.75
+    }
+  },
+  "signature": "ed25519:dGVzdF9jZXJ0X3NpZ25hdHVyZV9kYXRhX2Zvcl9kZW1vbnN0cmF0aW9u",
+  "status": "active",
+  "renewal_count": 2
+}

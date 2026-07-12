@@ -1,0 +1,15 @@
+{
+  "evidence_id": "evid-4131f4d5",
+  "spec_version": "1.0",
+  "agent_id": "main",
+  "run_id": "7e8a8669-ab1c-47a7-b6d1-7753f6b2e88d",
+  "event_type": "AGENT_STARTED",
+  "timestamp": "2026-07-06T22:51:40.997810",
+  "payload": {
+    "input": "Agent started"
+  },
+  "proof": {
+    "hash": "sha256:e57c35bd15fb8e0c2c3797e5b1662ce11c60fa72ff270fcf1ccb3815ec207ef9",
+    "signature": "ed25519:reference_runtime_signature"
+  }
+}

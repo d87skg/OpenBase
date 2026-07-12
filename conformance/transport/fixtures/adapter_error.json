@@ -1,0 +1,17 @@
+{
+  "adapter_id": "adapter-broken-mcp",
+  "runtime_name": "broken-runtime",
+  "target_protocol": "MCP",
+  "endpoint": "http://localhost:9999",
+  "auth": {
+    "type": "none"
+  },
+  "options": {
+    "auto_emit": false,
+    "batch_size": 1,
+    "retry_max": 0,
+    "timeout_ms": 100
+  },
+  "status": "error",
+  "created": "2026-07-07T12:00:00Z"
+}

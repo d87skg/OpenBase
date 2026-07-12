@@ -1,0 +1,18 @@
+{
+  "evidence_id": "evid-d24ecd94",
+  "spec_version": "1.0",
+  "agent_id": "main",
+  "run_id": "524ed481-dddb-41c9-8eff-f3ff7ca0fa9d",
+  "event_type": "AGENT_FINISHED",
+  "timestamp": "2026-07-05T20:16:49.617979",
+  "payload": {
+    "output": {
+      "status": "success",
+      "output": "Echo: Hello, OpenBase!"
+    }
+  },
+  "proof": {
+    "hash": "sha256:0bbc6c5263f3d7ebab060b9ffb6542541f889e2d4171f781829942234f77e87a",
+    "signature": "ed25519:reference_runtime_signature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "tool.filesystem.read",
+  "type": "tool",
+  "display_name": "Filesystem Read Tool",
+  "public_key": "ed25519:dGVzdF90b29sX3B1YmxpY19rZXlfZGF0YV9oZXJlX3Rlc3Q=",
+  "parent_runtime": "runtime.openclaw.0.1.0",
+  "status": "active",
+  "created": "2026-07-07T00:00:00Z",
+  "metadata": {
+    "category": "filesystem",
+    "risk_level": "low"
+  }
+}

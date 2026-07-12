@@ -1,0 +1,41 @@
+import sys, os, time, threading
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from openbase_core.events import EventBus
+from openbase_core.clock import LamportClock
+from openbase_core.agent import BaseAgent
+import json
+from datetime import datetime
+
+class SimpleAgent(BaseAgent):
+    def run(self, input_text: str):
+        run_id = self._emit("AgentStarted", {"input": input_text})
+        self._emit("MemoryUpdate", {"key": "msg", "value": input_text}, parent_id=run_id)
+        self._emit("AgentFinished", {"final_output": f"Processed: {input_text}"}, parent_id=run_id)
+        return "Done"
+
+def run_agent(node_id, agent_name, input_text, events):
+    # 每个节点独立的时钟（从0开始）
+    clock = LamportClock(node_id=node_id, initial_time=0)
+    bus = EventBus(clock=clock)
+    # 收集事件到列表中（用于演示顺序）
+    def collector(ev):
+        events.append((node_id, ev["logical_time"], ev["event_type"]))
+    bus.subscribe(collector)
+    agent = SimpleAgent(agent_id=agent_name, event_bus=bus, node_id=node_id)
+    agent.run(input_text)
+
+if __name__ == "__main__":
+    print("🚀 Running multi-node demonstration...")
+    events = []
+    # 启动两个模拟节点
+    t1 = threading.Thread(target=run_agent, args=("node-A", "agent1", "Hello from A", events))
+    t2 = threading.Thread(target=run_agent, args=("node-B", "agent2", "Hello from B", events))
+    t1.start(); t2.start()
+    t1.join(); t2.join()
+
+    # 按 logical_time 排序显示
+    events.sort(key=lambda x: x[1])
+    print("\n📊 Events sorted by logical_time:")
+    for node, ts, evtype in events:
+        print(f"  {node}: {ts:03d} → {evtype}")

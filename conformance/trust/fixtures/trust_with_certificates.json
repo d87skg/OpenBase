@@ -1,0 +1,19 @@
+{
+  "subject_id": "agent.certified.bot",
+  "subject_type": "agent",
+  "score": 0.72,
+  "dimensions": {
+    "evidence_volume": 0.7,
+    "evidence_quality": 0.8,
+    "consistency": 0.75,
+    "recency": 0.6,
+    "peer_attestation": 0.85
+  },
+  "evidence_count": 80,
+  "certificates": [
+    "cert_gold_001",
+    "cert_silver_002"
+  ],
+  "last_updated": "2026-07-07T11:30:00Z",
+  "trend": "rising"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "agent.openclaw.demo",
+  "type": "agent",
+  "display_name": "Demo Assistant",
+  "public_key": "ed25519:dGVzdF9wdWJsaWNfa2V5X2RhdGFfZm9yX2RlbW9uc3RyYXRpb24=",
+  "parent_runtime": "runtime.openclaw.0.1.0",
+  "status": "active",
+  "created": "2026-07-07T00:00:00Z"
+}

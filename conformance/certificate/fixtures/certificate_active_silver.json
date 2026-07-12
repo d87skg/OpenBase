@@ -1,0 +1,16 @@
+{
+  "certificate_id": "cert_silver_002",
+  "subject_id": "agent.newcomer.bot",
+  "subject_type": "agent",
+  "level": "SILVER",
+  "issuer": "registry.openbase.main",
+  "issued_at": "2026-07-01T00:00:00Z",
+  "expires_at": "2026-10-01T00:00:00Z",
+  "trust_snapshot": {
+    "score": 0.55,
+    "evidence_count": 60
+  },
+  "signature": "ed25519:dGVzdF9jZXJ0X3NpZ25hdHVyZV9kYXRhX2Zvcl9kZW1vbnN0cmF0aW9u",
+  "status": "active",
+  "renewal_count": 0
+}

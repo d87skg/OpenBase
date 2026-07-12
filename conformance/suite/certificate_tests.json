@@ -1,0 +1,35 @@
+﻿{
+  "name": "Certificate Tests",
+  "category": "CERTIFICATE",
+  "spec_reference": "OBEP-0004",
+  "tests": [
+    {
+      "id": "CERT-001",
+      "name": "BRONZE Certificate Issuance",
+      "priority": "P0",
+      "description": "验证 BRONZE 证书颁发条件",
+      "expected": {"issued": true}
+    },
+    {
+      "id": "CERT-002",
+      "name": "Certificate Structure Validation",
+      "priority": "P0",
+      "description": "验证证书对象是否符合 Schema",
+      "expected": {"schema_valid": true}
+    },
+    {
+      "id": "CERT-003",
+      "name": "Certificate Expiry Detection",
+      "priority": "P0",
+      "description": "验证过期证书是否被检测",
+      "expected": {"expired": true}
+    },
+    {
+      "id": "CERT-004",
+      "name": "Certificate Revocation",
+      "priority": "P0",
+      "description": "验证证书撤销是否正确",
+      "expected": {"revoked": true}
+    }
+  ]
+}

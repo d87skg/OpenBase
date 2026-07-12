@@ -1,0 +1,16 @@
+{
+  "evidence_id": "evid-91089616",
+  "spec_version": "1.0",
+  "agent_id": "main",
+  "run_id": "c86caa8e-242b-4de5-b4d9-bfc7fd0e6f06",
+  "event_type": "LLM_CALL",
+  "timestamp": "2026-07-05T22:56:20.816244",
+  "payload": {
+    "model": "gpt-4",
+    "prompt": "Hello, OpenBase!"
+  },
+  "proof": {
+    "hash": "sha256:8c8bc5f73cdb9fac6a180b4629cbfc47d292670e47f9b8b1bfe77564fcebfe6b",
+    "signature": "ed25519:reference_runtime_signature"
+  }
+}

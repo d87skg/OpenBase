@@ -1,0 +1,17 @@
+{
+  "subject_id": "agent.untrusted.bot",
+  "subject_type": "agent",
+  "score": 0.15,
+  "confidence": 0.8,
+  "dimensions": {
+    "evidence_volume": 0.05,
+    "evidence_quality": 0.1,
+    "consistency": 0.2,
+    "recency": 0.3,
+    "peer_attestation": 0.0
+  },
+  "evidence_count": 3,
+  "last_updated": "2026-07-06T00:00:00Z",
+  "previous_score": 0.22,
+  "trend": "falling"
+}

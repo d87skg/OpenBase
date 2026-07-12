@@ -1,0 +1,14 @@
+# OpenBase 配置文件
+project: my-openbase-project
+version: 1.0.0
+
+registry:
+  path: ./.openbase/registry
+
+runtime:
+  name: OpenClaw
+  vendor: OpenBase
+
+evidence:
+  storage: ./evidence
+  format: jsonl

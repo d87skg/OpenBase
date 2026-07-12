@@ -1,0 +1,15 @@
+{
+  "evidence_id": "evid-0f8a2836",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "CREWAI_TOOL_END",
+  "timestamp": "2026-07-05T22:29:11.660705",
+  "payload": {
+    "tool_name": "search_tool",
+    "output": "result from search_tool"
+  },
+  "proof": {
+    "hash": "sha256:crewai_adapter_hash",
+    "signature": "ed25519:crewai_adapter_signature"
+  }
+}

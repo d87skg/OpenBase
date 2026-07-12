@@ -1,0 +1,43 @@
+﻿# History
+
+**Asset-Type:** Identity
+**Status:** Frozen
+**Version:** 1.0.0
+**Date:** 2026-07-03
+
+The Canon is the single source of truth for OpenBase language, philosophy, and conceptual model.
+
+## Evolution
+
+### AES
+- **保留：** Risk Engine, Trust Engine, Governance
+- **放弃：** 平台化幻想，过重产品设计
+- **原因：** 过早产品化导致定位模糊
+
+### Aegis
+- **保留：** Trust, Execution Security, Identity, Capability
+- **放弃：** OS 定位
+- **原因：** OS 定位超出了基础设施的边界
+
+### OpenClaw
+- **保留：** Runtime, Agent Loop, Tool Calling, Plugin, Lifecycle, Execution
+- **放弃：** 产品定位
+- **原因：** 产品定位限制了协议的发展空间
+
+### Traccia
+- **保留：** Evidence, Policy, Verification, Timeline, Analyzer
+- **放弃：** 独立 Runtime, 重复 CLI, 重复 SDK
+- **原因：** 独立项目导致了品牌碎片化
+
+### OpenBase
+- **保留：** 所有上述能力，统一协议
+- **放弃：** 多个品牌、多个仓库、多个治理体系
+- **原因：** 单一协议组织比多个项目更具长期价值
+
+## Key Lessons
+
+- 每个项目不是失败，而是演进的一步
+- 品牌碎片化是最大的长期成本
+- 协议比实现重要，知识比代码重要
+- 治理结构必须在代码之前建立
+- 历史经验必须被记录和引用

@@ -1,0 +1,32 @@
+{
+  "event_id": "evt_i9j0k1l2",
+  "version": "1.0",
+  "event_type": "LLM_REQUEST",
+  "actor": {
+    "id": "agent.openclaw.demo",
+    "type": "agent"
+  },
+  "runtime": {
+    "name": "openclaw",
+    "version": "0.1.0"
+  },
+  "parent_id": "evt_e5f6g7h8",
+  "timestamp": "2026-07-07T12:00:10Z",
+  "payload": {
+    "model": "claude-sonnet-4-20250514",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistant."
+      },
+      {
+        "role": "user",
+        "content": "Read the README and summarize it."
+      }
+    ],
+    "parameters": {
+      "temperature": 0.7,
+      "max_tokens": 1024
+    }
+  }
+}

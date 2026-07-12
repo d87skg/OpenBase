@@ -1,0 +1,25 @@
+{
+  "evidence_id": "evid-5acfb222",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LLM_RESPONSE",
+  "timestamp": "2026-07-05T22:18:38.181426",
+  "payload": {
+    "response": {
+      "id": "chatcmpl-eda6b201",
+      "model": "gpt-3.5-turbo",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "Hello! This is a simulated response for gpt-3.5-turbo"
+          }
+        }
+      ]
+    }
+  },
+  "proof": {
+    "hash": "sha256:openai_adapter_hash",
+    "signature": "ed25519:openai_adapter_signature"
+  }
+}

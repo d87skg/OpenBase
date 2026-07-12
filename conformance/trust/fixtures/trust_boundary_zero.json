@@ -1,0 +1,16 @@
+{
+  "subject_id": "agent.zero.bot",
+  "subject_type": "agent",
+  "score": 0.0,
+  "confidence": 1.0,
+  "dimensions": {
+    "evidence_volume": 0.0,
+    "evidence_quality": 0.0,
+    "consistency": 0.0,
+    "recency": 0.0,
+    "peer_attestation": 0.0
+  },
+  "evidence_count": 0,
+  "last_updated": "2026-07-07T00:00:00Z",
+  "trend": "stable"
+}

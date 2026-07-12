@@ -1,0 +1,95 @@
+{
+  "": "https://openbase.dev/schemas/transport/v1.0/adapter-config.schema.json",
+  "title": "OpenBase Adapter Configuration v1.0",
+  "description": "Configuration for a Runtime Adapter connecting to OpenBase",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "runtime_name",
+    "target_protocol",
+    "endpoint"
+  ],
+  "properties": {
+    "adapter_id": {
+      "type": "string"
+    },
+    "runtime_name": {
+      "type": "string"
+    },
+    "runtime_version": {
+      "type": "string"
+    },
+    "target_protocol": {
+      "type": "string",
+      "enum": [
+        "REST",
+        "gRPC",
+        "MCP",
+        "WebSocket"
+      ]
+    },
+    "endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "api_key",
+            "ed25519",
+            "mtls",
+            "none"
+          ]
+        },
+        "api_key": {
+          "type": "string"
+        },
+        "public_key": {
+          "type": "string"
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "auto_emit": {
+          "type": "boolean"
+        },
+        "batch_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "retry_max": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 100
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "configured",
+        "connected",
+        "active",
+        "error",
+        "disconnected"
+      ]
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_connected": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

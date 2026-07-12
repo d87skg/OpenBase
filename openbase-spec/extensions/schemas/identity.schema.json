@@ -1,0 +1,30 @@
+{
+  "": "obp://identity/v1.0",
+  "title": "OpenBase Identity Schema v1.0",
+  "type": "object",
+  "required": [
+    "event_id",
+    "evidence_id",
+    "execution_id",
+    "agent_id"
+  ],
+  "properties": {
+    "event_id": {
+      "": "common.schema.json#/definitions/uuid",
+      "description": "Logical event identifier"
+    },
+    "evidence_id": {
+      "": "common.schema.json#/definitions/uuid",
+      "description": "Physical record identifier"
+    },
+    "execution_id": {
+      "": "common.schema.json#/definitions/uuid",
+      "description": "Execution context identifier"
+    },
+    "agent_id": {
+      "": "common.schema.json#/definitions/non_empty_string",
+      "description": "Agent identifier"
+    }
+  },
+  "additionalProperties": false
+}

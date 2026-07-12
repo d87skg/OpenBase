@@ -1,0 +1,55 @@
+{
+  "chain": [
+    {
+      "spec_id": "OBP-EVIDENCE-1.0",
+      "spec_version": "1.0.0",
+      "schema_uri": "obp://evidence/v1.0",
+      "event_id": "evt-001",
+      "evidence_id": "evd-001",
+      "execution_id": "exec-001",
+      "agent_id": "assistant-v1",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-03T10:00:00.000Z",
+      "causal": {
+        "parent_id": null,
+        "vector_clock": {
+          "node-A": 1
+        }
+      },
+      "payload": {
+        "input": "Tell me a joke."
+      },
+      "hash": "hash-001",
+      "hash_algorithm": "SHA-256",
+      "signature": "sig-001",
+      "signature_algorithm": "Ed25519",
+      "public_key": "pub-key"
+    },
+    {
+      "spec_id": "OBP-EVIDENCE-1.0",
+      "spec_version": "1.0.0",
+      "schema_uri": "obp://evidence/v1.0",
+      "event_id": "evt-002",
+      "evidence_id": "evd-002",
+      "execution_id": "exec-001",
+      "agent_id": "assistant-v1",
+      "event_type": "LLM_CALL",
+      "timestamp": "2026-07-03T10:00:01.000Z",
+      "causal": {
+        "parent_id": "evt-001",
+        "vector_clock": {
+          "node-A": 2
+        }
+      },
+      "payload": {
+        "prompt": "Tell me a joke about programming.",
+        "temperature": 0.7
+      },
+      "hash": "hash-002",
+      "hash_algorithm": "SHA-256",
+      "signature": "sig-002",
+      "signature_algorithm": "Ed25519",
+      "public_key": "pub-key"
+    }
+  ]
+}

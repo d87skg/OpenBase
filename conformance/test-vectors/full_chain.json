@@ -1,0 +1,43 @@
+﻿{
+  "name": "Full Evidence Chain Test Vector",
+  "description": "用于验证完整证据链的测试数据",
+  "chain": [
+    {
+      "evidence_id": "evid-chain-001",
+      "spec_version": "1.0",
+      "runtime_id": "runtime-test",
+      "execution_id": "exec-test-001",
+      "actor": "agent-test",
+      "event_type": "AGENT_STARTED",
+      "timestamp": "2026-07-05T10:00:00.000Z",
+      "causal": {"parent_id": null, "vector_clock": {"node-a": 1}},
+      "action": {"input": {"prompt": "Hello"}, "output": null, "duration_ms": 0},
+      "proof": {"hash": "sha256:chain1...", "signature": "ed25519:..."}
+    },
+    {
+      "evidence_id": "evid-chain-002",
+      "spec_version": "1.0",
+      "runtime_id": "runtime-test",
+      "execution_id": "exec-test-001",
+      "actor": "agent-test",
+      "event_type": "LLM_REQUEST",
+      "timestamp": "2026-07-05T10:00:01.000Z",
+      "causal": {"parent_id": "evid-chain-001", "vector_clock": {"node-a": 2}},
+      "action": {"input": {"model": "gpt-4", "prompt": "Hello"}, "output": null, "duration_ms": 123},
+      "proof": {"hash": "sha256:chain2...", "signature": "ed25519:..."}
+    },
+    {
+      "evidence_id": "evid-chain-003",
+      "spec_version": "1.0",
+      "runtime_id": "runtime-test",
+      "execution_id": "exec-test-001",
+      "actor": "agent-test",
+      "event_type": "AGENT_FINISHED",
+      "timestamp": "2026-07-05T10:00:02.000Z",
+      "causal": {"parent_id": "evid-chain-002", "vector_clock": {"node-a": 3}},
+      "action": {"input": {}, "output": {"result": "Hello World"}, "duration_ms": 1500},
+      "proof": {"hash": "sha256:chain3...", "signature": "ed25519:..."}
+    }
+  ],
+  "expected_validation": true
+}

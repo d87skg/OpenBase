@@ -1,0 +1,42 @@
+﻿{
+  "name": "Replay Tests",
+  "category": "REPLAY",
+  "spec_reference": "OBEP-0002",
+  "tests": [
+    {
+      "id": "REPLAY-001",
+      "name": "Evidence Chain Loading",
+      "priority": "P0",
+      "description": "验证证据链能否正确加载",
+      "expected": {"load_success": true}
+    },
+    {
+      "id": "REPLAY-002",
+      "name": "Causal Graph Construction",
+      "priority": "P0",
+      "description": "验证因果图是否正确构建",
+      "expected": {"dag": true}
+    },
+    {
+      "id": "REPLAY-003",
+      "name": "Topological Sort",
+      "priority": "P0",
+      "description": "验证拓扑排序是否正确",
+      "expected": {"ordered": true}
+    },
+    {
+      "id": "REPLAY-004",
+      "name": "Fidelity CAUSAL",
+      "priority": "P0",
+      "description": "验证 Runtime 是否支持 CAUSAL 保真度",
+      "expected": {"supports_causal": true}
+    },
+    {
+      "id": "REPLAY-005",
+      "name": "Replay Determinism",
+      "priority": "P0",
+      "description": "验证重放是否确定性",
+      "expected": {"deterministic": true}
+    }
+  ]
+}

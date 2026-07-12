@@ -1,0 +1,18 @@
+{
+  "rt-367fce83": {
+    "runtime_id": "rt-367fce83",
+    "name": "OpenClaw",
+    "version": "1.0.0",
+    "vendor": "OpenBase",
+    "capabilities": [
+      "execution",
+      "evidence",
+      "replay"
+    ],
+    "registered_at": "2026-07-05T22:52:43.592818",
+    "status": "ACTIVE"
+  },
+  "by_name": {
+    "OpenClaw": "rt-367fce83"
+  }
+}

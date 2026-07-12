@@ -1,0 +1,17 @@
+{
+  "subject_id": "agent.newcomer.bot",
+  "subject_type": "agent",
+  "score": 0.45,
+  "confidence": 0.5,
+  "dimensions": {
+    "evidence_volume": 0.3,
+    "evidence_quality": 0.6,
+    "consistency": 0.5,
+    "recency": 0.7,
+    "peer_attestation": 0.1
+  },
+  "evidence_count": 15,
+  "last_updated": "2026-07-07T11:00:00Z",
+  "previous_score": 0.4,
+  "trend": "rising"
+}

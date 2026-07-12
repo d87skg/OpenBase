@@ -1,0 +1,31 @@
+{
+  "spec_id": "OBP-EVIDENCE-1.0",
+  "spec_version": "1.0.0",
+  "schema_uri": "obp://evidence/v1.0",
+  "event_id": "e8b2c3d4-5f6g-7h8i-9j0k-1l2m3n4o5p6",
+  "evidence_id": "a1b2c3d4-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
+  "execution_id": "x9y8z7w6-v5u4t3s2-r1q0p9o8-n7m6l5k4",
+  "agent_id": "weather-bot-v1",
+  "event_type": "AGENT_STARTED",
+  "timestamp": "2026-07-03T10:00:00.000Z",
+  "causal": {
+    "parent_id": null,
+    "vector_clock": {
+      "agent-1": 1
+    }
+  },
+  "payload": {
+    "input": "What is the weather?",
+    "session_id": "sess-12345"
+  },
+  "metadata": {
+    "agent_version": "1.0.0",
+    "model": "gpt-4",
+    "environment": "production"
+  },
+  "hash": "abc123def456...",
+  "hash_algorithm": "SHA-256",
+  "signature": "sig789ghi012...",
+  "signature_algorithm": "Ed25519",
+  "public_key": "pub345jkl678..."
+}

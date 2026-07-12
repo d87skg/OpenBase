@@ -1,0 +1,43 @@
+{
+  "": "obp://causal/v1.0",
+  "title": "OpenBase Causal Schema v1.0",
+  "type": "object",
+  "required": [
+    "causal"
+  ],
+  "properties": {
+    "causal": {
+      "type": "object",
+      "required": [
+        "parent_id",
+        "vector_clock"
+      ],
+      "properties": {
+        "parent_id": {
+          "oneOf": [
+            {
+              "": "common.schema.json#/definitions/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Reference to parent event (null if first)"
+        },
+        "vector_clock": {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "description": "Map of node_id \u2192 counter"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

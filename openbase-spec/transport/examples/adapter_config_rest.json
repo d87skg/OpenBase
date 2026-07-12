@@ -1,0 +1,20 @@
+{
+  "adapter_id": "adapter-openhands-rest",
+  "runtime_name": "openhands",
+  "runtime_version": "0.15.0",
+  "target_protocol": "REST",
+  "endpoint": "https://registry.openbase.dev/api/v1",
+  "auth": {
+    "type": "api_key",
+    "api_key": "ob_sk_test_abc123"
+  },
+  "options": {
+    "auto_emit": true,
+    "batch_size": 10,
+    "retry_max": 3,
+    "timeout_ms": 5000
+  },
+  "status": "active",
+  "created": "2026-07-07T12:00:00Z",
+  "last_connected": "2026-07-07T12:00:05Z"
+}

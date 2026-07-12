@@ -1,0 +1,15 @@
+{
+  "evidence_id": "evid-aa750ee9",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "CREWAI_TASK_END",
+  "timestamp": "2026-07-05T22:29:11.645024",
+  "payload": {
+    "task_name": "research_task",
+    "output": "Task 'research_task' completed by Researcher"
+  },
+  "proof": {
+    "hash": "sha256:crewai_adapter_hash",
+    "signature": "ed25519:crewai_adapter_signature"
+  }
+}

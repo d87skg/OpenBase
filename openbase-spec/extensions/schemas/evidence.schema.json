@@ -1,0 +1,40 @@
+{
+  "": "obp://evidence/v1.0",
+  "title": "OpenBase Evidence Schema v1.0",
+  "type": "object",
+  "allOf": [
+    {
+      "required": [
+        "spec_id",
+        "spec_version",
+        "schema_uri"
+      ],
+      "properties": {
+        "spec_id": {
+          "const": "OBP-EVIDENCE-1.0"
+        },
+        "spec_version": {
+          "const": "1.0.0"
+        },
+        "schema_uri": {
+          "const": "obp://evidence/v1.0"
+        }
+      }
+    },
+    {
+      "": "identity.schema.json"
+    },
+    {
+      "": "event.schema.json"
+    },
+    {
+      "": "causal.schema.json"
+    },
+    {
+      "": "crypto.schema.json"
+    },
+    {
+      "": "metadata.schema.json"
+    }
+  ]
+}

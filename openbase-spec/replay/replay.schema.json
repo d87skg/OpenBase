@@ -1,0 +1,74 @@
+{
+  "": "https://openbase.dev/schemas/replay/v1.0/replay.schema.json",
+  "title": "OpenBase Replay v1.0",
+  "description": "Replay package manifest for execution reconstruction",
+  "type": "object",
+  "required": [
+    "replay_id",
+    "execution_id",
+    "fidelity",
+    "evidence_count",
+    "chain_root",
+    "status",
+    "created"
+  ],
+  "properties": {
+    "replay_id": {
+      "type": "string"
+    },
+    "execution_id": {
+      "type": "string"
+    },
+    "fidelity": {
+      "type": "string",
+      "enum": [
+        "STRUCTURAL",
+        "CAUSAL",
+        "LOGICAL",
+        "EXACT"
+      ]
+    },
+    "evidence_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "chain_root": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "chain_tail": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "running",
+        "completed",
+        "failed"
+      ]
+    },
+    "error_code": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

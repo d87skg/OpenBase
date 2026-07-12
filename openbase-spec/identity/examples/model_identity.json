@@ -1,0 +1,12 @@
+{
+  "id": "model.anthropic.claude-sonnet-4",
+  "type": "model",
+  "display_name": "Claude Sonnet 4",
+  "public_key": "ed25519:dGVzdF9tb2RlbF9wdWJsaWNfa2V5X2RhdGFfaGVyZV90ZXN0",
+  "status": "active",
+  "created": "2026-05-01T00:00:00Z",
+  "metadata": {
+    "provider": "Anthropic",
+    "context_window": 200000
+  }
+}

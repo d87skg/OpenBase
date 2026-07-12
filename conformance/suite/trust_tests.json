@@ -1,0 +1,42 @@
+﻿{
+  "name": "Trust Tests",
+  "category": "TRUST",
+  "spec_reference": "OBEP-0003",
+  "tests": [
+    {
+      "id": "TRUST-001",
+      "name": "Base Trust Score Calculation",
+      "priority": "P0",
+      "description": "验证信任分数是否正确计算",
+      "expected": {"score_correct": true}
+    },
+    {
+      "id": "TRUST-002",
+      "name": "Evidence Integrity Contribution",
+      "priority": "P0",
+      "description": "验证证据完整性贡献是否正确",
+      "expected": {"contribution_ok": true}
+    },
+    {
+      "id": "TRUST-003",
+      "name": "Time Decay",
+      "priority": "P0",
+      "description": "验证时间衰减是否正确应用",
+      "expected": {"decay_applied": true}
+    },
+    {
+      "id": "TRUST-004",
+      "name": "Trust State UNKNOWN",
+      "priority": "P0",
+      "description": "验证初始状态为 UNKNOWN",
+      "expected": {"state": "UNKNOWN"}
+    },
+    {
+      "id": "TRUST-005",
+      "name": "Conflict Detection",
+      "priority": "P0",
+      "description": "验证冲突是否被检测",
+      "expected": {"conflict_detected": true}
+    }
+  ]
+}

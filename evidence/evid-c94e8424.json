@@ -1,0 +1,19 @@
+{
+  "evidence_id": "evid-c94e8424",
+  "spec_version": "1.0",
+  "runtime_id": "rt-e37e8993",
+  "event_type": "LANGGRAPH_NODE_END",
+  "timestamp": "2026-07-05T22:24:13.621894",
+  "payload": {
+    "node_name": "process",
+    "outputs": {
+      "node": "process",
+      "counter": 2,
+      "status": "completed"
+    }
+  },
+  "proof": {
+    "hash": "sha256:langgraph_adapter_hash",
+    "signature": "ed25519:langgraph_adapter_signature"
+  }
+}

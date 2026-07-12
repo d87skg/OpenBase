@@ -1,0 +1,51 @@
+import sys
+sys.path.insert(0, '.')
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from .storage import MemoryStore
+from .service import RuntimeService, CertificateService, TrustService
+from .api import (
+    dsl_router,
+    setup_runtime_routes,
+    setup_certificate_routes,
+    setup_trust_routes,
+    health_router,
+    setup_evidence_routes,
+    reality_router,
+    state_router
+)
+
+app = FastAPI(title="OpenBase Registry API", version="1.0.0")
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+store = MemoryStore()
+runtime_service = RuntimeService(store)
+cert_service = CertificateService(store)
+trust_service = TrustService(store)
+
+# 初始化 Ingestion Engine
+from engines.reality_ingestion import RealityIngestionEngine
+ingestion_engine = RealityIngestionEngine()
+ingestion_engine.set_store(store)
+
+app.include_router(health_router)
+app.include_router(setup_runtime_routes(runtime_service))
+app.include_router(setup_certificate_routes(cert_service, trust_service))
+app.include_router(setup_trust_routes(trust_service, cert_service))
+app.include_router(setup_evidence_routes(store, runtime_service))
+app.include_router(reality_router)
+app.include_router(dsl_router)
+app.include_router(state_router)
+
+@app.on_event("startup")
+async def startup():
+    existing = runtime_service.get_by_name("OpenClaw")
+    if not existing:
+        runtime_service.register(
+            "OpenClaw", "1.0.0", "OpenBase",
+            runtime_class="REFERENCE",
+            capabilities=["execution", "evidence", "replay", "verification", "determinism", "certification"]
+        )
+
+app.state.ingestion_engine = ingestion_engine
+app.state.store = store

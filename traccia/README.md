@@ -1,8 +1,16 @@
 ﻿# Traccia SDK
 
-**One-line OpenBase integration for AI Agents.**
+**Official Developer SDK for OpenBase — Add verifiable execution to any AI agent in 5 lines.**
 
- `python
+[![PyPI](https://img.shields.io/badge/pypi-traccia_sdk-blue)](https://pypi.org/project/traccia-sdk/)
+[![OpenBase](https://img.shields.io/badge/OpenBase-Compatible-00AA00)](https://github.com/d87skg/openbase)
+
+## Install
+
+`ash
+pip install traccia
+Quick Start
+python
 from traccia import observe
 
 @observe
@@ -10,42 +18,35 @@ def my_agent(task: str) -> str:
     return f"Done: {task}"
 
 result, execution = my_agent("hello world")
-print(f"Trust: {execution.trust_score.score}")
- `
+print(f"Trust: {execution.trust_score.score:.2f}")
+print(f"Certificate: {execution.certificate.level}")
+Features
+@observe: One-line decorator — automatic Event → Evidence → Trust → Certificate
 
-## Install
+Session: Manage agent execution sessions with full traceability
 
- `bash
-pip install traccia
- `
+Timeline Renderer: Convert evidence to human-readable text/markdown/json
 
-## Quick Start
+Package Export: Export .evidence ZIP packages for audit
 
- `python
-from traccia import TracciaAgent
+OpenBase Adapter: Automatic conversion to OBS 23 standard event types
 
-agent = TracciaAgent("my-agent")
+CLI
+bash
+traccia intercept app.py     # Record agent execution
+traccia diagnose evidence/   # Analyze execution trace
+traccia guard --policy rule.yaml  # Security policy gateway
+Architecture
+text
+Your Agent Code
+    │
+    ▼
+Traccia (@observe / Session / Adapter)
+    │
+    ▼
+OpenBase Protocol (OBS → Evidence → Replay → Certificate)
+Powered by OpenBase
+Traccia is the adoption engine for OpenBase, the open protocol stack for trusted AI agent interoperability.
 
-@agent.step
-def research(topic: str) -> str:
-    return f"Research on {topic}"
-
-result, execution = agent.run("AI safety")
- `
-
-## CLI
-
- `bash
-traccia init
-traccia run app.py
-traccia replay
-traccia verify
- `
-
-## Powered by OpenBase
-
-Traccia is the developer SDK for OpenBase, the Open Protocol Stack for Trusted AI Agent Interoperability.
-
-## License
-
+License
 MIT

@@ -84,7 +84,7 @@ OpenClaw is **not** a production Agent Runtime and does not compete with OpenHan
 **Traccia SDK** is the recommended entry point for developers:
 
 `python
-from traccia import observe
+from traccia_sdk import observe
 
 @observe
 def my_agent(task: str) -> str:

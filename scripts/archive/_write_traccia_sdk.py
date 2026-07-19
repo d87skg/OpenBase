@@ -33,7 +33,7 @@ def observe(func=None, *, name: str = "default", track_args: bool = True):
     """Decorator that wraps any function with OpenBase tracing.
 
     Usage:
-        from traccia import observe
+        from traccia_sdk import observe
 
         @observe
         def my_agent(task: str):
@@ -86,7 +86,7 @@ class TracciaAgent:
     """High-level Agent builder with automatic OpenBase tracing.
 
     Usage:
-        from traccia import TracciaAgent
+        from traccia_sdk import TracciaAgent
 
         agent = TracciaAgent("my-agent")
 
@@ -176,7 +176,7 @@ def quick_start():
     Traccia SDK v2 — Quick Start
     ============================
 
-    from traccia import observe
+    from traccia_sdk import observe
 
     @observe
     def my_agent(task: str) -> str:

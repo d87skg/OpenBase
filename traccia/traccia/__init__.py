@@ -3,7 +3,7 @@ Traccia SDK v2.0
 Official Developer SDK for OpenBase — Add verifiable execution to any AI agent.
 
 Quick Start:
-    from traccia import observe
+    from traccia_sdk import observe
 
     @observe
     def my_agent(task):

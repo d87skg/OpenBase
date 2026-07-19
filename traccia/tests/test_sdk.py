@@ -6,7 +6,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
 import pytest
-from traccia import observe, TracciaAgent, get_runtime
+from traccia_sdk import observe, TracciaAgent, get_runtime
 from openbase_core.replay import ReplayStatus
 
 

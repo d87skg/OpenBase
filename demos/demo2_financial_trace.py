@@ -2,11 +2,11 @@
 sys.path.insert(0, r'D:\OpenBase')
 
 """Demo 2: Financial Agent Trace — Responsibility chain for financial transactions."""
-from traccia.traccia.session.manager import Session
-from traccia.traccia.renderer.timeline import TimelineRenderer
-from traccia.traccia.package.exporter import export_package
-from traccia.traccia.openbase_adapter import OpenBaseSignerBridge
-from traccia.traccia.openbase_adapter.evidence_converter import batch_convert
+from traccia.session.manager import Session
+from traccia.renderer.timeline import TimelineRenderer
+from traccia.package.exporter import export_package
+from traccia.openbase_adapter import OpenBaseSignerBridge
+from traccia.openbase_adapter.evidence_converter import batch_convert
 
 session = Session(objective="Execute trade: BUY 1000 AAPL at market", agent_id="agent.trading.desk")
 session.record("agent_start", {"portfolio": "growth-fund", "risk_level": "moderate"})
@@ -26,3 +26,4 @@ renderer = TimelineRenderer(chain)
 print(renderer.render_markdown())
 path = export_package(session, chain, "financial_trace.evidence", attribution={"executor": "agent.trading.desk", "supervisor": "human.supervisor"})
 print(f"Evidence package: {path}")
+

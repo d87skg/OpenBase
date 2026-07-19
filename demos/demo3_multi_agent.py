@@ -2,11 +2,11 @@
 sys.path.insert(0, r'D:\OpenBase')
 
 """Demo 3: Multi-Agent Collaboration — Two agents with causal ordering."""
-from traccia.traccia.session.manager import Session
-from traccia.traccia.renderer.timeline import TimelineRenderer
-from traccia.traccia.package.exporter import export_package
-from traccia.traccia.openbase_adapter import OpenBaseSignerBridge
-from traccia.traccia.openbase_adapter.evidence_converter import batch_convert
+from traccia.session.manager import Session
+from traccia.renderer.timeline import TimelineRenderer
+from traccia.package.exporter import export_package
+from traccia.openbase_adapter import OpenBaseSignerBridge
+from traccia.openbase_adapter.evidence_converter import batch_convert
 
 session_a = Session(objective="Research AI safety papers", agent_id="agent.researcher")
 session_a.record("agent_start", {"topic": "AI safety"})
@@ -37,3 +37,4 @@ print(TimelineRenderer(chain_b).render_text())
 pa = export_package(session_a, chain_a, "multi_agent_researcher.evidence")
 pb = export_package(session_b, chain_b, "multi_agent_reviewer.evidence")
 print(f"Packages: {pa}, {pb}")
+
